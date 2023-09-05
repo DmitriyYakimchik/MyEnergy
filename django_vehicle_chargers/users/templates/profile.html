@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1> Профиль пользователя {{profile.username}} </h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Сохранить</button>
+    </form>
+
+<a href="{% url 'delete_profile' %}">Удалить профиль</a>
+{% endblock %}

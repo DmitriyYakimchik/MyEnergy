@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <label>{{ registration_form.username.label }}:</label><p>{{ registration_form.username }}</p>
+    <label>{{ registration_form.email.label }}:</label><p>{{ registration_form.email }}</p>
+    <label>{{ registration_form.password1.label }}:</label><p>{{ registration_form.password1 }}</p>
+    <label>{{ registration_form.password2.label }}:</label><p>{{ registration_form.password2 }}</p>
+
+    {% for message in messages %}
+    <p style="color: lightseagreen">{{ message }}</p>
+    {% endfor %}
+
+    <input type="submit" class="btn btn-default btn-lg" value="Зарегистрироваться">
+</form>
+{% endblock %}

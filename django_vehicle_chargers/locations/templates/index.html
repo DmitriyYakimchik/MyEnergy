@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="map" id='map'></div>
+
+<!--Leaflet js-->
+{% load static %}
+<script src="{% static 'js/map_rendering.js' %}" defer></script>
+
+{% endblock %}
